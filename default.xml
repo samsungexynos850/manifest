@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="origin"
+          fetch="https://github.com/samsungexynos850"
+          revision="master" />
+
+  <remote name="ivoszbg"
+          fetch="https://github.com/ivoszbg"
+          revision="master" />
+
+  <!-- Mainline Linux Fork -->
+  <project name="linux" path="linux" remote="origin" />
+
+  <!-- UniLoader -->
+  <project name="uniLoader" path="uniLoader" remote="ivoszbg" />
+
+  <!-- Compilation tools/scripts -->
+  <project name="tools" path="tools" remote="origin" >
+	<linkfile src="build.sh" dest="build.sh" />
+  </project>
+</manifest>

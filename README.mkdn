@@ -1,0 +1,38 @@
+# Samsung Galaxy A21s (Exynos850) Mainline
+
+This manifest provides all the repositories and tools needed to compile
+and boot mainline Linux on your Galaxy A21s.
+
+**NOTE: This guide is ONLY for installing the kernel, to install a Linux
+Operating System, Post Market OS should be used.**
+
+To initialize the source code, use a command like this:
+```
+repo init -u https://github.com/samsungexynos850/manifest.git -b master
+```
+Then to sync up
+```
+repo sync
+```
+
+Compilation
+-----------
+
+This guide assumes you already have LLVM installed on your x86_64 host
+and all other dependencies needed to compile Linux.
+
+Run this command to start compilation:
+```
+./build.sh
+```
+
+Installation
+------------
+
+Install the flashable boot image using a custom recovery that provides a
+fastboot daemon (LineageOS recovery is recommended)
+
+Once in recovery mode enter fastboot mode and run the following command.
+```
+fastboot flash boot out/images/boot.img
+```
